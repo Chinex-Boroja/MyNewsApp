@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var mTableLayout: TabLayout
     lateinit var viewPager: ViewPager
 
+    //Api key
+    var apiKey = "3148639a4eda4c1395d1c73eb7f19b00"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
