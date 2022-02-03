@@ -1,12 +1,3 @@
 package com.example.mynewsapp
 
-class MainNews {
-
-    private val status: String = ""
-    private val totalResult: String= ""
-    val articles : ArrayList<Model>
-        get() {
-            TODO()
-        }
-
-}
+data class MainNews(val status: String, val totalResult: String, val articles : List<Model>)
