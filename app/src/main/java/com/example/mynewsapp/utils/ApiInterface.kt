@@ -1,8 +1,7 @@
 package com.example.mynewsapp.utils
 
-import com.example.mynewsapp.MainNews
+import com.example.mynewsapp.models.MainNews
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -14,6 +13,6 @@ interface ApiInterface {
 
     @GET("top-headlines")
     fun getMainNews(@Query("country") country: String,
-        @Query("apiKey") apiKey: String, @Query("pageSize") page: Int): Call<List<MainNews >>
+        @Query("apiKey") apiKey: String, @Query("pageSize") page: Int): Call<List<MainNews>>
 
 }
