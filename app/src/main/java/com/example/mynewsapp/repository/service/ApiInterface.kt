@@ -1,18 +1,26 @@
-package com.example.mynewsapp.utils
+package com.example.mynewsapp.repository.service
 
 import com.example.mynewsapp.models.MainNews
-import retrofit2.Call
+import com.example.mynewsapp.utils.Constants
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiInterface {
 
-    companion object {
-        var base_url: String = "https://newsapi.org/v2/"
-    }
+    @GET("v2/top-headlines")
+    suspend fun getBreakingNews(
+        @Query("country") country: String = "ng",
+        @Query("page") pageNumber: Int,
+        @Query("apiKey") apiKey: String = Constants.API_KEY
+    ): Response<MainNews>
 
-    @GET("top-headlines")
-    fun getMainNews(@Query("country") country: String,
-        @Query("apiKey") apiKey: String, @Query("pageSize") page: Int): Call<List<MainNews>>
+    @GET("v2/everyhing")
+    suspend fun getSearchNews(
+        @Query("q") searchQuery: String,
+        @Query("page") pageNumber: Int,
+        @Query("apiKey") apiKey: String = Constants.API_KEY
+    ): Response<MainNews>
+
 
 }
