@@ -1,3 +1,12 @@
 package com.example.mynewsapp.models
 
-data class MainNews(val status: String, val totalResult: String, val articles : List<ArticleModel>)
+import com.google.gson.annotations.SerializedName
+
+data class MainNews(
+    @SerializedName("articles")
+    var articles:  MutableList<ArticleModel>?,
+    @SerializedName("status")
+    var status: String?,
+    @SerializedName("totalResults")
+    var totalResults: Int?
+)
