@@ -1,3 +1,3 @@
-package com.example.mynewsapp
+package com.example.mynewsapp.models
 
-data class MainNews(val status: String, val totalResult: String, val articles : List<Model>)
+data class MainNews(val status: String, val totalResult: String, val articles : List<ArticleModel>)
