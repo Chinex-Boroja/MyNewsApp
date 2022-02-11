@@ -1,9 +1,13 @@
 package com.example.mynewsapp.models
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
+@Entity(
+    tableName = "articles"
+)
 data class ArticleModel(
     @PrimaryKey(autoGenerate = true)
     var id : Int? = null,
@@ -14,7 +18,7 @@ data class ArticleModel(
     @SerializedName("description")
     var description: String?,
     @SerializedName("publishedAt")
-    var publishedAt: String,
+    var publishedAt: String?,
     @SerializedName("source")
     val source: SourceStream?,
     @SerializedName("title")
