@@ -20,10 +20,10 @@ data class ArticleModel(
     @SerializedName("publishedAt")
     var publishedAt: String?,
     @SerializedName("source")
-    val source: SourceStream?,
+    var source: SourceStream?,
     @SerializedName("title")
     var title: String?,
     @SerializedName("urlToImage")
-    val urlToImage: String?,
+    var urlToImage: String?,
 ) : Serializable {
 }
