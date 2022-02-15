@@ -13,4 +13,22 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+        <item name="fontFamily">@font/aileron_semibold</item>
+    </style>
+
+    <style name="SubTitleTextStyle">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/subtitleTextColor</item>
+        <item name="fontFamily">@font/aileron_regular</item>
+    </style>
+
+    <style name="NormalTextStyle">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/subtitleTextColor</item>
+        <item name="fontFamily">@font/aileron_thin</item>
+    </style>
 </resources>
