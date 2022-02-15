@@ -9,7 +9,8 @@ import com.example.mynewsapp.models.ArticleModel
 
 @Database(
     entities = [ArticleModel::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 
 @TypeConverters(Converters::class)
