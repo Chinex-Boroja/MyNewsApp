@@ -1,110 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginTop="0dp"
-        android:background="@color/white">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/news_feed"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="#03a9f4">
-
-            </TextView>
-
-        </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/include"
-        android:layout_below="@id/toolbar"
-        app:tabTextColor="#618c8f"
-        app:tabSelectedTextColor="#03a9f4"
-        app:tabIndicatorColor="#03a9f4"
-        app:tabIndicatorHeight="3.5dp"
-        android:layout_marginTop="0dp"
-        android:backgroundTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:tabMode="scrollable">
-
-
-        <com.google.android.material.tabs.TabItem
+        <androidx.fragment.app.FragmentContainerView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home"
-            android:id="@+id/home">
+            android:id="@+id/newsFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/news_host"
+            android:name="androidx.navigation.fragment.NavHostFragment"/>
 
-        </com.google.android.material.tabs.TabItem>
+    </FrameLayout>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sports"
-            android:id="@+id/sports">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:id="@+id/bottomNavigationView"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/bottom_navbar_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@color/selector"
+        app:itemTextColor="@color/selector"
+        android:background="@color/colorPrimary"
+        app:layout_constraintHorizontal_bias="0.5"/>
 
-        </com.google.android.material.tabs.TabItem>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/entertainment"
-            android:id="@+id/ent">
-
-        </com.google.android.material.tabs.TabItem>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/science"
-            android:id="@+id/science">
-
-        </com.google.android.material.tabs.TabItem>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/health"
-            android:id="@+id/health">
-
-        </com.google.android.material.tabs.TabItem>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/technology"
-            android:id="@+id/tech">
-
-        </com.google.android.material.tabs.TabItem>
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/include"
-        android:layout_marginTop="0dp">
-
-    </androidx.viewpager.widget.ViewPager>
-
-
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
