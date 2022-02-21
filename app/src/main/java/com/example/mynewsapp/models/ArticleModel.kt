@@ -23,6 +23,8 @@ data class ArticleModel(
     var source: SourceStream?,
     @SerializedName("title")
     var title: String?,
+    @SerializedName("url")
+    var url: String?,
     @SerializedName("urlToImage")
     var urlToImage: String?,
 ) : Serializable {
